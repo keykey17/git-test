@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 事件</title>
+</head>
+<body>
+    <input type='text' id='num1' value=""/>
+    <select id='operate'>
+        <option value='+' title='add' >+</option>
+        <option value="-" title='subtract'>-</option>
+        <option value="*" title='multiply' selected>*</option>
+        <option value="/" title='divided'>/</option>
+    </select>
+    <input type='text' id='num2' value=""/>
+    <input type='button' value=' = ' onclick="count()" />
+    <input type='text' id='result' />
+    <script type="text/javascript">
+        function count() {
+
+            /*此处写代码*/
+            var num1 = document.getElementById('num1').value;
+            var num2 = document.getElementById('num2').value;
+            var result = document.getElementById('result');
+            var operate = document.getElementById('operate');
+            var index = operate.selectedIndex;
+            // console.log(operate.options[index].title);
+            // return
+         	var operation = {
+         		add: function(num1, num2) {
+         			return +num1 + +num2;
+         		},
+         		subtract: function(num1, num2) {
+         			return num1 - num2;
+         		},
+         		multiply: function(num1, num2) {
+         			return num1 * num2;
+         		},
+         		divided: function(num1, num2) {
+         			return num1 / num2;
+         		}
+         	}
+
+         	var op = operate.options[index].getAttribute('title');
+         	// return;
+         	var re = operation[op](num1, num2);
+			result.value = re;
+        }
+    </script>
+</body>
+</html>

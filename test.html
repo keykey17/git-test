@@ -1,0 +1,423 @@
+<html>
+<head>
+	<title>测试</title>
+</head>
+<body>
+	<button>1</button>
+	<button>2</button>
+	<button>3</button>
+     <p id="test" style="background-color: red; color: blue;">我是一个段落！</p>
+    <p>
+        请选择菜单：
+        <select id="menu">
+            <option>请选择</option>
+            <option value="fruit">水果</option>
+            <option value="cake">蛋糕</option>
+            <option value="nuts">坚果</option>
+        </select>
+    </p>
+    <p>该系列有：<span></span></p>
+
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<script type="text/javascript">
+    function Count(){
+        var sum = 0;
+        for (var i=0; i < arguments.length; i++) {
+                sum += arguments[i];
+        }
+        alert(sum);
+    }
+    Count(1, 2, 5, 100);
+// var arr1 = ["aa", "bb"];
+// var arr2 = ["cc", "dd"];
+// // arr1.push.apply(arr1, arr2);
+// arr1.push.apply(arr1, arr2);
+// console.log(arr1);
+// function Animal(name, food) {
+//     this.name = name;
+//     this.food = food;
+//     this.say = function() {
+//         alert(this.name + '喜欢吃' + this.food);
+//     }
+// }
+// function Dog(name, food) {
+//     Animal.call(this, name, food);
+// }
+// var d = new Dog('狗狗', '骨头');
+// d.say();
+// function animal(){
+//     this.name = 'ani';
+//     this.showName = function() {
+//         alert(this.name);
+//     }
+// }
+// function cat(){
+//     this.name = "cat"
+// }
+// var an = new animal();
+// var c = new cat();
+// an.showName.call(cat,"");
+// var person = {
+//     name:'zs',
+//     age: 20,
+
+// }
+// delete person.name;
+// alert(person.name);
+// function Animal(name, num) {
+//     this.name = name;
+//     this.num = num;
+//     this.getInfo = function() {
+//         alert('name:' + this.name + ',num:' + this.num);
+//     }
+// }
+
+// function Cat(name, num) {
+//     Animal.call(this, name, num);
+// }
+
+// function Dog(name, num) {
+//     Animal.apply(this, [name, num]);
+// }
+// var c = new Cat('tom', 2);
+// c.getInfo();
+// var d = new Dog('do', 5);
+// d.getInfo();
+// function Animal(name, num) {
+//     this.name = name;
+//     this.num = num;
+// }
+// function Cat() {
+
+// }
+// Cat.prototype = new Animal('cat', 1);
+// Cat.prototype.info = function() {
+//     alert("动物名称:" + this.name + ",动物数量:" + this.num);
+// }
+// var obj = new Cat();
+// obj.info();
+// var student = {
+//     name: '张宇',
+//     sex: '男',
+//     age: 18
+// }
+// function student() {
+//     var privateStore = {
+            
+//     };
+
+//     var _set = function(name, sex, age) {
+//          privateStore.name = name;
+//          privateStore.sex = sex;
+//          privateStore.age = age;
+//     }
+//     var _get = function() {
+//          return privateStore;
+//     }
+//     this.get = function() {
+//          return _get();
+//     }
+//     this.set = function(name, sex, age) {
+//         return _set(name, sex, age);
+//     }
+
+// }
+// var obj = new student();
+// obj.set('小明', '男', 23);
+// console.log(obj.get());
+// function student() {
+//     this.name = "张宇";
+//     var sex = "男";
+//     var age = 18;
+//     this.getName = function() {
+//          return this.name;   
+//     };
+//     this.getSex = function() {
+//         return sex;
+//     }
+//     this.getAge = function() {
+//         return age;
+//     }
+// }
+// var obj = new student();
+// alert(obj.getAge());
+
+//构造方法
+        // function test(name) {
+        //         this.name = name;
+        //         this.action = function(str) {
+        //                 alert(str);
+        //         }
+        // }
+        // var obj = new test('zuo');
+        // alert(obj.name);
+        // obj.action('在学习');
+//混合模式
+        // function test(name) {
+        //        this.name = name
+        // }
+        // test.prototype = {
+        //     action: function(str){
+        //         alert(str);
+        //     }
+        // }
+        // var obj = new test('imooc');
+        // alert(obj.name);
+        // obj.action('前端');
+//原型模式
+        // function test() {
+            
+        // }
+        // test.prototype.name = 'imooc';
+        // test.prototype.action = function(str){
+        //     alert(str);
+        // }
+        // // alert(test.prototype.name)
+        // // test.prototype.action('前端');
+        // var obj = new test();
+        // alert(obj.name);
+        // obj.action('前端');
+//工厂模式
+        // function factory(name) {
+        //     var obj = new Object();
+        //     obj.name = name;
+        //     obj.action = function(str){
+        //         alert(str);
+        //     }
+        //     return obj;
+        // }
+        // var course = factory('imooc');
+        // alert(course.name);
+        // course.action('前端!');
+        // function Person(name, age) {
+        //        this.name = name;
+        //        this.age = age;
+        //        this.eat = function(str) {
+        //             return this.name + '---' + this.age + '---' + str;
+        //        } 
+        // }
+        // var obj = new Person('zs', 19);
+        // alert(obj.eat('在吃面'));
+        // var person = new Object();
+        // person.name = "zhangs";
+        // person.eat = function(i) {
+        //     alert("我在吃" + i);
+        // }
+        // person.play = function(i) {
+        //     alert("我在玩" + i);    
+        // }
+        // alert(person.name);
+        // person.eat("面");
+        // var li=document.getElementsByTagName("li");
+        // for(var i=0,len=li.length;i<len;i++){
+        //     (function(i){
+        //         // console.log(i);
+        //        // 补充代码
+        //        li[i].onclick = function() {
+        //             alert(i);
+        //        }
+               
+        //     })(i);
+        // }   
+        //  
+    // function fn() {
+    //     var num = 1;
+    //     function fn2() {
+    //         num++;
+    //         alert(num);
+    //     }
+    //     return fn2;
+    // }
+    // var f = fn();
+    // f();
+    // f();
+        
+    // var fruit = ['苹果', '香蕉'];
+    // var cake = ['慕斯', '奶酪'];
+    // var nuts = ['碧根果', '巴旦木'];
+    // //获取标签
+    // var menu = document.querySelector("#menu");
+    // menu.onchange = function() {
+    //     switch(this.value) {
+    //         case 'fruit':
+    //             getMenuDetail(fruit);
+    //             break;
+    //         case 'cake':
+    //             getMenuDetail(cake);
+    //             break;
+    //         case 'nuts':
+    //             getMenuDetail(nuts);
+    //             break;
+    //     }
+    // }
+    // function getMenuDetail(typeArr) {
+    //     //拼接字符串
+    //     typeString = typeArr.join('、');
+    //     console.log(typeString);
+    //     // console.log(document.querySelector('p > span'));
+    //     document.querySelector('p > span').innerHTML = typeString;
+    //     //.innerHTML = typeString;
+    // }
+	
+    // var name = 'xh';
+    // function setName() {
+    // 	console.log(name);
+    // 	var name = 1
+    // }
+    // setName();
+    // var cat = {
+    //     'name': 'Tom',
+    //     'age': 4
+    // }
+    // cat.name = 'Tim'
+    // //delete cat.name
+    // if ('name' in cat) {
+    //     console.log(cat.name);
+    // } else {
+    //     console.log("222");
+    // }
+    // var multiply = new Function('x', 'y', 'return x * y;');
+    // var divide = new Function('x', 'y', 'return x / y;');
+    // var add = new Function('x', 'y', 'return x + y;');
+    // var subtract = new Function('x', 'y', 'return x - y;');
+    // var multiply_data = multiply(21, 32);
+    // var div_data = divide(24, 3);
+    // var add_data = add(multiply_data, div_data);
+    // var re = subtract(add_data, 5)
+    // console.log(re)
+//     var person = {
+//         name:'xm',
+//         sex:'1',
+//         setSex: function (sex) {
+//             this.sex = sex;
+//         }
+//     }
+// person.setSex(2);
+// console.log(person);
+//     var family = {
+//     me:'小明',
+//     wife: '小花',
+//     baby: '',
+//     setBaby:function (sex) {
+//         if (sex == 'male') {
+//             this.baby = '牛牛';
+//         } else {
+//             this.baby = '妞妞';
+//         }
+//     }
+// };
+// family.setBaby('female');
+// console.log(family);
+// function add (x, y) {
+//     function isNumber() {
+//         if (isNaN(x) || isNaN(y)) {
+//             return "请传入数字类型的参数";
+//         } else {
+//             return x + y;
+//         }
+//     }
+//     return isNumber;
+// }
+// console.log(add(1, 'a')());
+// function add(num1,num2){
+
+//     function isNumber(){
+//         if( !isNaN(num1)&&!isNaN(num2)){
+//             console.log(num1+num2);
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+//     return isNumber;
+
+// }
+
+// document.write(add(1,2)());
+// console.log(function (x=56, y=23) {
+//     return x - y
+// }());
+// var operation = {
+//     add: function () {
+//         console.log('add')
+//         return this;
+//     },
+//     '@': function () {
+//         console.log('@');
+//     }
+// }
+// operation.add()['@']();
+    // var a = 1;
+
+    // function Person() {
+
+    // }
+    // var obj = new Object({"name": "zuo"});
+    // // var obj = new Person();
+    // obj.name = 'zuo'
+
+    // var arr = new Array(1, 2);
+    // console.log(obj);
+    // console.log(arr);
+
+   //  var data = [3, 4, 2, 1];
+   // function multiply(num1, num2, num3, num4) {
+   //     return num1 * num2 * num3 * num4;
+   // }
+   // console.log(multiply.apply(window, data))
+   //在此处补充代码
+    // function min () {
+    //     if(arguments.length == 0) return;
+    //     var min_param = '';
+    //     for (var i = 0; i < arguments.length; i++) {
+    //         if (i == arguments.length - 1) break;
+    //         if (arguments[i] < arguments[i+1]) {
+    //             min_param = arguments[i];
+    //         } else {
+    //             min_param = arguments[i+1];
+    //         }
+    //     }
+    //     return min_param;
+    // }
+    // var params = [2, 4, 1, -1, 56, 3, -7];
+    // var min_data = min.apply(window, params);
+    // document.write(min_data);
+    // function fn (num1, num2) {
+    //     if (arguments.length != fn.length) throw new Error("参数不一致"); 
+    //     console.log(num1 + num2)
+    // }
+    // fn(1, 2, 3);
+//     function css_func (dom, name, value) {
+//     var param_num = arguments.length;
+//     if (param_num == 2) { //查询
+//         var css_name = document.getElementById(dom).style[name];
+//         console.log(css_name)
+//     } else if (param_num == 3) { //赋值
+//         document.getElementById(dom).style[name] = value;
+//     } else {
+//         throw new Error("参数异常!");
+//     }
+// }
+// css_func("test", 'background-color', 'orange');
+    // function add (num1, num2) {
+    //         return num1 + num2;
+    // }
+    // console.log(add(1,2));
+    // var fn = add;
+    // add = 1
+    // console.log(add);
+    // console.log(fn);
+
+    // for (var i = 0; i < 2; i++) {
+    //     for (var j = 1; j < 4; j++) {
+    //         if (j == 3) break;
+    //         document.write(j);
+    //     }
+    // }
+    // alert({name: 'xm'});
+
+</script>
+</body>
+</html>

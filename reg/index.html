@@ -1,0 +1,108 @@
+<html>
+<head>
+	<title>正则表达式练习</title>
+</head>
+<style type="text/css">
+  
+</style>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+var str = "444";
+var pattern = /^[a-z]\w{5,19}$/i;
+console.log(pattern.test(str));
+// var str = 'alex.aa@yahoo.com';
+// var pattern = /(\w+\.)*\w+@(\w+\.)+[a-z]{2,}/i;
+// console.log(str.match(pattern));
+// var str = "background-color,gg-ee";
+// function toCamelCase(str){
+// 	var pattern = /-([a-z])/gi;
+// 	return str.replace(pattern, function(all, pl){
+// 		 return pl.toUpperCase();
+// 	});
+// }
+// document.write(toCamelCase(str));
+// var str = "中国军队和阿扁一起办证";
+// var pattern = /军队|阿扁|办证/g;
+// document.write(str.replace(pattern, function(str){
+// 	console.log(str);
+// }));
+// var str="i love js js";
+// var pattern = /\b(love) ((js\s?)+)/;
+// document.write(str.replace(pattern, "<strong style='color:red'>$1</strong> <span style='color:green'>$2</span>"));
+// var str = '110报警120急救119火警114查询';
+// var pattern = /\d/g;
+// document.write(str.match(pattern));
+// var str = "JavaScript is fun";
+// var pattern = /a./g
+// document.write(str.search(pattern));
+// var str = "html  , js ,   javascript";
+// var pattern = /\s*,\s*/;
+// console.log(str.split(pattern));
+// var str = "js js js";
+// var pattern = /(j)s/g;
+// console.log(str.match(pattern));
+	// var str="1.js 2.js 3.js";
+	// var pattern = /js/g;
+	// var result,
+	// 	total = 0,
+	// 	string = '';
+	// while ((result=pattern.exec(str)) != null) {
+	// 	total ++;
+	// 	string += "第" + total + "次匹配到" + result[0] + ",位置是" + result.index + "\n";
+	// }
+	// console.log(str + "\n");
+	// console.log(string);
+ // var str = "jsfdjsla";
+ // var pattern = /\D/;
+ // console.log(pattern.exec(str));
+ // str="htmabccssefgjs";
+ // var pattern = /html|css|js/;
+ // document.write(pattern.exec(str));
+// var str = '我家的电话是6930184，地址是北京西城区';
+// var pattern = /\d+/;
+// document.write(pattern.exec(str));
+// var str = '192.168.1.1@Admin';
+// var pattern = /\d\.\d@[A-Z][a-z][a-z][a-z][a-z]/;
+// document.write(pattern.exec(str));
+// var str = '/[a\nb]/';
+// var pattern = new RegExp('\\/\\[a\nb\]\\/');
+// document.write(pattern.exec(str));
+ // var str = '1.html';
+ // var pattern = /\./;
+ // var content = pattern.exec(str);
+ // document.write(content);
+// var str = "正则表达式";
+// var userInput = '正则';
+// var pattern = new RegExp(userInput);
+// console.log(pattern.exec(str))
+// var str = 'JavaScript_RegExpJava_5@gmail.com';
+//  var data = /java/i.exec(str);
+//  for (var i = 0; i < data.length; i++) {
+//  		alert(data[i]);
+//  }
+// var str = 'regular expression = regexp';
+// //字面量
+// var pattern_z = /lar exp/;
+// //构造函数
+// var pattern_g = new RegExp("lar exp");
+
+// var z_test = pattern_z.test(str);
+// var g_test = pattern_g.test(str);
+
+// var z_exec = pattern_z.exec(str);
+// var g_exec = pattern_g.exec(str);
+
+// document.write(z_test);
+// document.write("/" + g_test);
+// document.write("/" + z_exec);
+// document.write("/" + g_exec);
+ // var str = '一个"普通字符"在匹配字符串的时候，匹配与它相同的一个字符';
+ // var pattern_z = /"普通字符"/;
+ // var pattern_g = new RegExp("\"普通字符\"");
+
+ // document.write(pattern_z.test(str) + "/" + pattern_g.test(str) + "/" + pattern_z.exec(str) + "/" + pattern_g.exec(str));
+
+</script>
